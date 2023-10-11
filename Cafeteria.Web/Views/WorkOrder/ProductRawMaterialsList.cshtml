@@ -1,0 +1,9 @@
+﻿@using Cafeteria.Domain.Model
+@model IEnumerable<ProductRawMaterial>
+
+<ul>
+    @foreach (var productRawMaterial in Model)
+    {
+        <li>@productRawMaterial.RawMaterial.Name</li>
+    }
+</ul>

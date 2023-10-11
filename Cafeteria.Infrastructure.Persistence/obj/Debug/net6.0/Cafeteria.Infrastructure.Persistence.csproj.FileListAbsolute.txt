@@ -1,0 +1,17 @@
+F:\Proyectos .NET\CafeteriaLogisticaApp\Cafeteria.Infrastructure.Persistence\bin\Debug\net6.0\Cafeteria.Infrastructure.Persistence.deps.json
+F:\Proyectos .NET\CafeteriaLogisticaApp\Cafeteria.Infrastructure.Persistence\bin\Debug\net6.0\Cafeteria.Infrastructure.Persistence.dll
+F:\Proyectos .NET\CafeteriaLogisticaApp\Cafeteria.Infrastructure.Persistence\bin\Debug\net6.0\Cafeteria.Infrastructure.Persistence.pdb
+F:\Proyectos .NET\CafeteriaLogisticaApp\Cafeteria.Infrastructure.Persistence\bin\Debug\net6.0\Cafeteria.Application.dll
+F:\Proyectos .NET\CafeteriaLogisticaApp\Cafeteria.Infrastructure.Persistence\bin\Debug\net6.0\Cafeteria.Domain.dll
+F:\Proyectos .NET\CafeteriaLogisticaApp\Cafeteria.Infrastructure.Persistence\bin\Debug\net6.0\Cafeteria.Application.pdb
+F:\Proyectos .NET\CafeteriaLogisticaApp\Cafeteria.Infrastructure.Persistence\bin\Debug\net6.0\Cafeteria.Domain.pdb
+F:\Proyectos .NET\CafeteriaLogisticaApp\Cafeteria.Infrastructure.Persistence\obj\Debug\net6.0\Cafeteria.Infrastructure.Persistence.csproj.AssemblyReference.cache
+F:\Proyectos .NET\CafeteriaLogisticaApp\Cafeteria.Infrastructure.Persistence\obj\Debug\net6.0\Cafeteria.Infrastructure.Persistence.GeneratedMSBuildEditorConfig.editorconfig
+F:\Proyectos .NET\CafeteriaLogisticaApp\Cafeteria.Infrastructure.Persistence\obj\Debug\net6.0\Cafeteria.Infrastructure.Persistence.AssemblyInfoInputs.cache
+F:\Proyectos .NET\CafeteriaLogisticaApp\Cafeteria.Infrastructure.Persistence\obj\Debug\net6.0\Cafeteria.Infrastructure.Persistence.AssemblyInfo.cs
+F:\Proyectos .NET\CafeteriaLogisticaApp\Cafeteria.Infrastructure.Persistence\obj\Debug\net6.0\Cafeteria.Infrastructure.Persistence.csproj.CoreCompileInputs.cache
+F:\Proyectos .NET\CafeteriaLogisticaApp\Cafeteria.Infrastructure.Persistence\obj\Debug\net6.0\Cafeteria.Infrastructure.Persistence.csproj.CopyComplete
+F:\Proyectos .NET\CafeteriaLogisticaApp\Cafeteria.Infrastructure.Persistence\obj\Debug\net6.0\Cafeteria.Infrastructure.Persistence.dll
+F:\Proyectos .NET\CafeteriaLogisticaApp\Cafeteria.Infrastructure.Persistence\obj\Debug\net6.0\refint\Cafeteria.Infrastructure.Persistence.dll
+F:\Proyectos .NET\CafeteriaLogisticaApp\Cafeteria.Infrastructure.Persistence\obj\Debug\net6.0\Cafeteria.Infrastructure.Persistence.pdb
+F:\Proyectos .NET\CafeteriaLogisticaApp\Cafeteria.Infrastructure.Persistence\obj\Debug\net6.0\ref\Cafeteria.Infrastructure.Persistence.dll

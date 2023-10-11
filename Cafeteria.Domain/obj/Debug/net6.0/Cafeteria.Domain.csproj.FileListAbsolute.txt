@@ -1,0 +1,12 @@
+F:\Proyectos .NET\CafeteriaLogisticaApp\Cafeteria.Domain\bin\Debug\net6.0\Cafeteria.Domain.deps.json
+F:\Proyectos .NET\CafeteriaLogisticaApp\Cafeteria.Domain\bin\Debug\net6.0\Cafeteria.Domain.dll
+F:\Proyectos .NET\CafeteriaLogisticaApp\Cafeteria.Domain\bin\Debug\net6.0\Cafeteria.Domain.pdb
+F:\Proyectos .NET\CafeteriaLogisticaApp\Cafeteria.Domain\obj\Debug\net6.0\Cafeteria.Domain.csproj.AssemblyReference.cache
+F:\Proyectos .NET\CafeteriaLogisticaApp\Cafeteria.Domain\obj\Debug\net6.0\Cafeteria.Domain.GeneratedMSBuildEditorConfig.editorconfig
+F:\Proyectos .NET\CafeteriaLogisticaApp\Cafeteria.Domain\obj\Debug\net6.0\Cafeteria.Domain.AssemblyInfoInputs.cache
+F:\Proyectos .NET\CafeteriaLogisticaApp\Cafeteria.Domain\obj\Debug\net6.0\Cafeteria.Domain.AssemblyInfo.cs
+F:\Proyectos .NET\CafeteriaLogisticaApp\Cafeteria.Domain\obj\Debug\net6.0\Cafeteria.Domain.csproj.CoreCompileInputs.cache
+F:\Proyectos .NET\CafeteriaLogisticaApp\Cafeteria.Domain\obj\Debug\net6.0\Cafeteria.Domain.dll
+F:\Proyectos .NET\CafeteriaLogisticaApp\Cafeteria.Domain\obj\Debug\net6.0\refint\Cafeteria.Domain.dll
+F:\Proyectos .NET\CafeteriaLogisticaApp\Cafeteria.Domain\obj\Debug\net6.0\Cafeteria.Domain.pdb
+F:\Proyectos .NET\CafeteriaLogisticaApp\Cafeteria.Domain\obj\Debug\net6.0\ref\Cafeteria.Domain.dll

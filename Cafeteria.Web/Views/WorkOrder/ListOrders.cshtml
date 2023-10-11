@@ -1,0 +1,51 @@
+﻿<div class="container">
+    <h1>Órdenes de Trabajo</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Usuario</th>
+                <th>Producto</th>
+                <th>Fecha de Creación</th>
+                <th>Estado</th>
+                <th>Cantidad</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var pageWorkOrder in Model)
+            {
+                <tr>
+                    <td>@pageWorkOrder.User</td>
+                    <td>@pageWorkOrder.Product</td>
+                    <td>@pageWorkOrder.CreationDate</td>
+                    <td>@pageWorkOrder.Status</td>
+                    <td>@pageWorkOrder.Quantity</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <h1>Inventario (Kardex)</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID de Kárdex</th>
+                <th>Fecha de Transacción</th>
+                <th>Descripción</th>
+                <th>Cantidad</th>
+                <th>Nombre del Producto</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var kardex in ViewBag.Kardex)
+            {
+                <tr>
+                    <td>@kardex.KardexId</td>
+                    <td>@kardex.TransactionDate</td>
+                    <td>@kardex.Description</td>
+                    <td>@kardex.Quantity</td>
+                    <td>@kardex.NameProduct</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
