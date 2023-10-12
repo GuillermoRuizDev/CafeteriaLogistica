@@ -23,4 +23,5 @@ public interface IWorkOrderRepository
     Product? GetProductById(int productId);
     Task CreateWorkOrderDetailsAsync(List<WorkOrderDetail> workOrderDetails);
     RawMaterial GetRawMaterial(int? rawMaterialId);
+    Task<ProductRawMaterial> GetRawMaterialsAsync(int rawMaterialId, int productId);
 }

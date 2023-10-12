@@ -1,7 +1,8 @@
 ﻿using Cafeteria.Application.Dto;
 using Cafeteria.Application.Interfaces;
+using Cafeteria.Application.Services;
 using Cafeteria.Application.StaticClass;
-using Cafeteria.Domain.ViewModel;
+using Cafeteria.Web.ViewModel;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -32,7 +33,7 @@ public class WorkOrderController : Controller
     [Authorize(Policy = Roles.SupervisorRole)]
     public async Task<IActionResult> ListOrders()
     {
-        var listOrderViewModel = new List<ListOrderViewModel>();
+        var listOrderViewModel = new List<ListOrderViewDto>();
         listOrderViewModel = (await _workOrderService.GetWorkOrdersPage(1, 100)).ToList();
         ViewBag.Kardex = await _workOrderService.GetKardexsAsync();
         return View(listOrderViewModel);

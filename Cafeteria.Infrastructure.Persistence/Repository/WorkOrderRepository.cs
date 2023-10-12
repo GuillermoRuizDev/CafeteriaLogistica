@@ -97,4 +97,8 @@ public class WorkOrderRepository : IWorkOrderRepository
 
     public RawMaterial GetRawMaterial(int? rawMaterialId)
             => _context.RawMaterials.Find(rawMaterialId);
+
+    public async Task<ProductRawMaterial> GetRawMaterialsAsync(int rawMaterialId, int productId)
+        => await _context.ProductRawMaterials.FirstOrDefaultAsync(p => p.RawMaterialId == rawMaterialId & p.ProductId == productId);
+
 }

@@ -2,7 +2,7 @@
 
 public record KardexDto(
      int KardexId,
-     DateTime TransactionDate,
+     string TransactionDate,
      string Description,
      decimal Quantity,
      string NameProduct

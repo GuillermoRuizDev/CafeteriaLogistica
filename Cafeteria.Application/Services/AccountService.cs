@@ -1,7 +1,10 @@
 ﻿using Cafeteria.Application.Interfaces;
 using Cafeteria.Domain.Model;
-using Cafeteria.Domain.ViewModel;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
+using System.Security.Claims;
 
 namespace Cafeteria.Application.Services;
 
@@ -33,7 +36,7 @@ public class AccountService : IAccountService
     //    return default;
     //}
 
-    public async Task<(SignInResult, List<string>)> Login(LoginViewModel model)
+    public async Task<(SignInResult, ApplicationUser)> Login(LoginViewDto model, HttpContext httpContext)
     {
         var user = await _userManager.FindByEmailAsync(model.Email);
         var roles = new List<string>();
@@ -41,13 +44,36 @@ public class AccountService : IAccountService
         {
             var result = await _signInManager.PasswordSignInAsync(user, model.Password, model.RememberMe, lockoutOnFailure: false);
             roles = (await _userManager.GetRolesAsync(user)).ToList();
-            return (result, roles);
+
+            Task.WaitAll(GenerateClaimsAsync(roles, user, httpContext));
+
+            return (result, user);
         }
 
         return default;
     }
+    private async Task GenerateClaimsAsync(List<string> roles, ApplicationUser user, HttpContext httpContext)
+    {
+        var claims = new List<Claim>
+                {
+                    new Claim(ClaimTypes.Name, user.UserName),
+                    new Claim("email", user.Email),
+                };
 
-    public async Task<(IdentityResult, List<string>)> Register(RegisterViewModel model)
+        for (int i = 0; i < roles.Count; i++)
+        {
+            claims.Add(new Claim(ClaimTypes.Role, roles[i]));
+            await _userManager.AddClaimAsync(user, new Claim(ClaimTypes.Role, roles[i]));
+        }
+
+
+        var userIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+        ClaimsPrincipal principal = new ClaimsPrincipal(userIdentity);
+
+        await httpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
+    }
+
+    public async Task<(IdentityResult, ApplicationUser)> Register(RegisterViewDto model, HttpContext httpContext)
     {
         var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
         var result = await _userManager.CreateAsync(user, model.Password);
@@ -58,9 +84,11 @@ public class AccountService : IAccountService
             await _signInManager.SignInAsync(user, isPersistent: false);
 
             roles = (await _userManager.GetRolesAsync(user)).ToList();
+
+            Task.WaitAll(GenerateClaimsAsync(roles, user, httpContext));
         }
 
-        return (result, roles);
+        return (result, user);
     }
 
     public async Task Logout()
@@ -68,4 +96,27 @@ public class AccountService : IAccountService
         await _signInManager.SignOutAsync();
     }
 
+    public async Task<bool> IsInRoleAsync(ApplicationUser user, string rol)
+    {
+        return await _userManager.IsInRoleAsync(user, rol);
+    }
+
 }
+public record LoginViewDto(
+     string Email,
+     string Password,
+     bool RememberMe
+);
+public record RegisterViewDto(
+     string Email,
+     string Password,
+     string ConfirmPassword,
+     UserRole Role
+);
+
+public enum UserRole
+{
+    User,
+    Supervisor
+}
+

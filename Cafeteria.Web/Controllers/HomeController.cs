@@ -1,4 +1,4 @@
-﻿using Cafeteria.Domain.ViewModel;
+﻿using Cafeteria.Web.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 

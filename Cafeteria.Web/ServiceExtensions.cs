@@ -1,6 +1,7 @@
 ﻿using Cafeteria.Application.StaticClass;
 using Cafeteria.Domain.Model;
 using Cafeteria.Infrastructure.Persistence.Context;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 
 namespace Cafeteria.Web;
@@ -12,6 +13,8 @@ public static class ServiceExtensions
         builder.Services.AddControllersWithViews();
 
         builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = false)
+            .AddRoles<IdentityRole>()
+            .AddRoleManager<RoleManager<IdentityRole>>()
                         .AddEntityFrameworkStores<ApplicationDbContext>();
 
         builder.Services.AddAuthorization(options =>
@@ -20,6 +23,14 @@ public static class ServiceExtensions
             options.AddPolicy(Roles.SupervisorRole, policy => policy.RequireRole(Roles.SupervisorRole));
             options.AddPolicy(Roles.AdministratorRole, policy => policy.RequireRole(Roles.AdministratorRole));
         });
+
+        builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+            .AddCookie(option =>
+            {
+                option.LoginPath = "/Account/Login";
+                option.ExpireTimeSpan = TimeSpan.FromMinutes(20);
+                option.AccessDeniedPath = "/Home/Privacy";
+            });
 
         return builder;
     }

@@ -85,6 +85,30 @@ public static class SeedData
         };
         rawMaterialData.Add(freshMilkRawMaterial);
 
+        var raMaterial3 = new RawMaterial()
+        {
+            RawMaterialId = 3,
+            Name = "Carrot",
+            AvailableQuantity = 200,
+        };
+        rawMaterialData.Add(raMaterial3);
+
+        var raMaterial4 = new RawMaterial()
+        {
+            RawMaterialId = 4,
+            Name = "Flour",
+            AvailableQuantity = 200,
+        };
+        rawMaterialData.Add(raMaterial4);
+
+        var raMaterial5 = new RawMaterial()
+        {
+            RawMaterialId = 5,
+            Name = "water",
+            AvailableQuantity = 200,
+        };
+        rawMaterialData.Add(raMaterial5);
+
         db.RawMaterials.AddRangeAsync(rawMaterialData);
         db.SaveChanges();
 
@@ -102,7 +126,7 @@ public static class SeedData
         {
             ProductRawMaterialId = 2,
             ProductId = latte.ProductId,
-            RawMaterialId = freshMilkRawMaterial.RawMaterialId,
+            RawMaterialId = 5,
             Quantity = 2,
         });
 
@@ -119,15 +143,15 @@ public static class SeedData
         productRawMaterials.Add(new ProductRawMaterial()
         {
             ProductRawMaterialId = 4,
-            ProductId = cafeConLeche.ProductId,
-            RawMaterialId = coffeeRawMaterial.RawMaterialId,
+            ProductId = carrotCake.ProductId,
+            RawMaterialId = 4,
             Quantity = 5,
         });
         productRawMaterials.Add(new ProductRawMaterial()
         {
             ProductRawMaterialId = 5,
             ProductId = cafeConLeche.ProductId,
-            RawMaterialId = freshMilkRawMaterial.RawMaterialId,
+            RawMaterialId = 3,
             Quantity = 1,
         });
 
@@ -170,6 +194,33 @@ public static class SeedData
         };
         kardexData.Add(carrotCakeKardex);
 
+        var product3 = new Kardex()
+        {
+            TransactionDate = DateTime.Now,
+            Description = "Inventario inicial",
+            Quantity = 32,
+            RawMaterialId = 3,
+        };
+        kardexData.Add(product3);
+
+        var product4 = new Kardex()
+        {
+            TransactionDate = DateTime.Now,
+            Description = "Inventario inicial",
+            Quantity = 43,
+            RawMaterialId = 4,
+        };
+        kardexData.Add(product4);
+
+        var product5 = new Kardex()
+        {
+            TransactionDate = DateTime.Now,
+            Description = "Inventario inicial",
+            Quantity = 50,
+            RawMaterialId = 5,
+        };
+        kardexData.Add(product5);
+
 
 
         db.Kardexs.AddRangeAsync(kardexData);
@@ -182,7 +233,7 @@ public static class SeedData
         {
             WorkOrderId = 1,
             UserId = 1,
-            CreationDate = DateTime.Now,
+            CreationDate = DateTime.Now.AddDays(-1),
             Status = "Pendiente"
 
         };
@@ -193,7 +244,7 @@ public static class SeedData
         {
             WorkOrderId = 2,
             UserId = 2,
-            CreationDate = DateTime.Now,
+            CreationDate = DateTime.Now.AddDays(-1),
             Status = "Pagado"
         };
         workOrderData.Add(order2);
@@ -203,7 +254,7 @@ public static class SeedData
         {
             WorkOrderId = 3,
             UserId = 1,
-            CreationDate = DateTime.Now,
+            CreationDate = DateTime.Now.AddDays(-1),
             Status = "Entregado"
         };
         workOrderData.Add(order3);
