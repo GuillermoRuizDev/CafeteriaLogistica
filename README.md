@@ -27,4 +27,4 @@ Asegúrate de tener instalados los siguientes componentes:
 1. Clona este repositorio en tu máquina local:
 
    ```shell
-   git clone https://github.com/TuUsuario/ProyectoMVC5Onion.git
+   git clone https://github.com/GuillermoRuizDev/CafeteriaLogistica.git
